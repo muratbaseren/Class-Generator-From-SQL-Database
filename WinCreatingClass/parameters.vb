@@ -1,0 +1,45 @@
+Public Class QueryValues
+    Private _Columns As String
+    Private _Values As String
+    Private _OrginalValues As String
+
+    Public Property Columns() As String
+        Get
+            Return Me._Columns
+        End Get
+        Set(ByVal value As String)
+            Me._Columns = value
+        End Set
+    End Property
+
+    Public Property Values() As String
+        Get
+            Return Me._Values
+        End Get
+        Set(ByVal value As String)
+            Me._Values = value
+        End Set
+    End Property
+
+    Public Property OrginalValues() As String
+        Get
+            Return Me._OrginalValues
+        End Get
+        Set(ByVal value As String)
+            Me._OrginalValues = value
+        End Set
+    End Property
+
+    'Insert Sorgusu için...
+    Public Sub New(ByVal Columns As String, ByVal Values As String)
+        Columns = Me._Columns
+        Values = Me._Values
+    End Sub
+
+    'Update Sorgusu için..
+    Public Sub New(ByVal Columns As String, ByVal Values As String, ByVal OrginalValues As String)
+        Columns = Me._Columns
+        Values = Me._Values
+        OrginalValues = Me._OrginalValues
+    End Sub
+End Class

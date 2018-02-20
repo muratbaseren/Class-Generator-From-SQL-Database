@@ -1,0 +1,25 @@
+#Region "Connection"
+Imports System.Data.SqlClient
+
+Public Class Connection
+    Public Shared ConnectionString As String = @"@ConnectionString"
+    Public Shared Conn As SqlConnection
+
+    Public Shared Sub ConnectionOpen()
+        Conn = New SqlConnection(ConnectionString)
+
+        If Conn.State = ConnectionState.Open <> True Then
+            Conn.Open()
+        End If
+    End Sub
+
+    Public Shared Sub ConnectionClose()
+        Conn = New SqlConnection(ConnectionString)
+
+        If Conn.State = ConnectionState.Closed <> True Then
+            Conn.Close()
+        End If
+    End Sub
+End Class
+#End Region
+

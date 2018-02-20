@@ -246,8 +246,8 @@ Public Class Form1
                             txt.Multiline = True
                             txt.ScrollBars = ScrollBars.Both
                             txt.Dock = DockStyle.Fill
-                            Dim FR As FileReader.FileReader = New FileReader.FileReader()
-                            txtText = FR.FileReader(Application.StartupPath & "\" & TabPageName & ".txt")
+                            txtText = System.IO.File.ReadAllText(Application.StartupPath & "\" & TabPageName & ".txt")
+                            txtText = txtText.Replace("@ConnectionString", ConnectionString)
                             txt.Text = txtText
 
                             'Richtextbox TabPage e eklenir..
